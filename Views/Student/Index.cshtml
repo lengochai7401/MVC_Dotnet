@@ -1,0 +1,28 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "StudentPage";
+    @* var students = ViewBag.ListStudent as List<Name.Student>; *@
+    var students = Model;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Student Page</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table class="table">
+        <thead>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">address</th>
+        </thead>
+        <tbody>
+            @foreach (var student in students){
+            <tr>
+                <td>@student.id</td>
+                <td>@student.name</td>
+                <td>@student.address</td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
